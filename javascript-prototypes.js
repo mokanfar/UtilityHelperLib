@@ -1,7 +1,7 @@
 _ = require("./licia-data-manip.js");
 
 class Zray extends Array {
-  constructor(args) {
+  constructor(...args) {
     super(...args);
   }
 }
@@ -222,6 +222,11 @@ Zray.prototype.filteroutgarbage = function () {
   return _.compact(this);
 };
 
+Zray.prototype.removegarbage = function () {
+  this.splice(0, this.length, ..._.compact(this));
+  return this;
+};
+
 Zray.prototype.jsonfindfirstwherekeyvalueis = function (fn) {
   return _.find(this, fn);
 };
@@ -247,8 +252,9 @@ Zray.prototype.removewhere = function (fn) {
 };
 
 class Zob extends Object {
-  constructor(name) {
-    super();
+  constructor(args) {
+    super(args);
+    Object.assign(this, args);
   }
 }
 
@@ -313,7 +319,7 @@ Zob.prototype.mergewithobj = function (obj) {
   return _.extendDeep(this, obj);
 };
 
-Number.prototype.isin = function (arr) {
+Number.prototype.isin = Number.prototype.isinarray = function (arr) {
   return arr.indexOf(this.valueOf()) !== -1;
 };
 
@@ -334,12 +340,30 @@ Number.prototype.alllocationsin = Number.prototype.alloccurrenceindexesin = Numb
 String.prototype.has = function (v) {
   return this.valueOf().includes(v);
 };
-String.prototype.isin = function (v) {
+
+String.prototype.isakeyof = String.prototype.isakeyinsideobj = function (obj) {
+  return _.keys(obj).includes(this.valueOf());
+};
+
+Number.prototype.isakeyof = Number.prototype.isakeyinsideobj = function (obj) {
+  return _.keys(obj).includes(this.toString());
+};
+
+String.prototype.isavalfoundinsideobj = function (obj) {
+  return _.values(obj).includes(this.valueOf());
+};
+
+Number.prototype.isavalfoundinsideobj = function (obj) {
+  return _.values(obj).includes(this.valueOf());
+};
+
+String.prototype.isin = String.prototype.isinarray = function (v) {
   return v.includes(this.valueOf());
 };
 String.prototype.isset = function (obj) {
   return _.has(obj, this.valueOf());
 };
+
 String.prototype.locationof = String.prototype.indexin = function (v) {
   return v.indexOf(this.valueOf());
 };
@@ -377,7 +401,16 @@ String.prototype.numberofoccurencesin = Number.prototype.numberofoccurencesin = 
   return arr.filter((x) => x == this.valueOf()).length;
 };
 
+const Arr = (arr) => {
+  return new Zray(...arr);
+};
+
+const Obj = (ob) => {
+  return new Zob(ob);
+};
 module.exports = {
-  Zray,
+  Arr,
+  Obj,
   Zob,
+  Zray,
 };

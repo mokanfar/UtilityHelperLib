@@ -17,6 +17,9 @@ interface String {
   allindexesin();
   numberofoccurrencesin();
   rep();
+  isavalfoundinsideobj();
+  isakeyof();
+  isinarray();
 }
 
 interface Number {
@@ -31,6 +34,9 @@ interface Number {
   alloccurrenceindexesin();
   allindexesinside();
   allindexesin();
-  numberofoccurrencesin();
+  numberofoccurencesin();
   indexin();
+  isavalfoundinsideobj();
+  isakeyof();
+  isinarray();
 }
