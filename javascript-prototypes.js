@@ -1,5 +1,7 @@
+_ = require("./licia-data-manip.js");
+
 class Zray extends Array {
-  constructor(...args) {
+  constructor(args) {
     super(...args);
   }
 }
@@ -216,64 +218,6 @@ Zray.prototype.notin = Zray.prototype.missingfromarray = Zray.prototype.whichval
   return this.filter((x) => !s.has(x));
 };
 
-Number.prototype.isin = function (arr) {
-  return arr.indexOf(this.valueOf()) !== -1;
-};
-
-Number.prototype.removeallingreedy = function (arr) {
-  arr.removeall(this.valueOf());
-  return arr;
-};
-Number.prototype.isset = function (obj) {
-  return _.has(obj, this.valueOf());
-};
-Number.prototype.alllocationsin = Number.prototype.alloccurrenceindexesin = Number.prototype.allindexesinside = Number.prototype.allindexesin = function (
-  arr
-) {
-  return arr
-    .map((e, i) => (e === this.valueOf() ? i : ""))
-    .filter((x) => x !== "");
-};
-
-String.prototype.isin = String.prototype.has = function (v) {
-  return v.includes(this.valueOf());
-};
-String.prototype.isset = function (obj) {
-  return _.has(obj, this.valueOf());
-};
-String.prototype.locationof = function (v) {
-  return v.indexOf(this.valueOf());
-};
-
-String.prototype.alllocationsin = String.prototype.alloccurrenceindexesin = String.prototype.allindexesinside = String.prototype.allindexesin = function (
-  arr
-) {
-  return arr.map((e, i) => (e === value ? i : "")).filter(this.valueOf());
-};
-
-String.prototype.num = function () {
-  return parseInt(this.valueOf());
-};
-
-Number.prototype.abs = function () {
-  return Math.abs(this.valueOf());
-};
-
-Number.prototype.str = function () {
-  return this.toString();
-};
-
-String.prototype.rep = function (what, wit) {
-  let what2 = new RegExp(what, "g");
-  return this.replace(what2, wit);
-};
-
-String.prototype.numberofoccurencesin = Number.prototype.numberofoccurencesin = function (
-  arr
-) {
-  return arr.filter((x) => x == this.valueOf()).length;
-};
-
 Zray.prototype.filteroutgarbage = function () {
   return _.compact(this);
 };
@@ -367,4 +311,73 @@ Zob.prototype.findkeynamewhereval = function (val) {
 
 Zob.prototype.mergewithobj = function (obj) {
   return _.extendDeep(this, obj);
+};
+
+Number.prototype.isin = function (arr) {
+  return arr.indexOf(this.valueOf()) !== -1;
+};
+
+Number.prototype.removeallingreedy = function (arr) {
+  arr.removeall(this.valueOf());
+  return arr;
+};
+Number.prototype.issetinobj = Number.prototype.isset = function (obj) {
+  return _.has(obj, this.valueOf());
+};
+Number.prototype.alllocationsin = Number.prototype.alloccurrenceindexesin = Number.prototype.allindexesinside = Number.prototype.allindexesin = function (
+  arr
+) {
+  return arr
+    .map((e, i) => (e === this.valueOf() ? i : ""))
+    .filter((x) => x !== "");
+};
+String.prototype.has = function (v) {
+  return this.valueOf().includes(v);
+};
+String.prototype.isin = function (v) {
+  return v.includes(this.valueOf());
+};
+String.prototype.isset = function (obj) {
+  return _.has(obj, this.valueOf());
+};
+String.prototype.locationof = String.prototype.indexin = function (v) {
+  return v.indexOf(this.valueOf());
+};
+
+String.prototype.alllocationsin = String.prototype.alloccurrenceindexesin = String.prototype.allindexesinside = String.prototype.allindexesin = function (
+  arr
+) {
+  return arr.map((e, i) => (e === value ? i : "")).filter(this.valueOf());
+};
+
+String.prototype.num = function () {
+  return parseInt(this.valueOf());
+};
+
+Number.prototype.abs = function () {
+  return Math.abs(this.valueOf());
+};
+
+Number.prototype.str = function () {
+  return this.toString();
+};
+
+Number.prototype.indexin = function (arr) {
+  return arr.indexOf(this.toString());
+};
+
+String.prototype.rep = function (what, wit) {
+  let what2 = new RegExp(what, "g");
+  return this.replace(what2, wit);
+};
+
+String.prototype.numberofoccurencesin = Number.prototype.numberofoccurencesin = function (
+  arr
+) {
+  return arr.filter((x) => x == this.valueOf()).length;
+};
+
+module.exports = {
+  Zray,
+  Zob,
 };

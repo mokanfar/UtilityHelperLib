@@ -1,0 +1,16 @@
+{
+  "name": "UtilityHelperLib",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "watch -f *.js -r \"node ${p} > test.log\"",
+    "coffee": "watch -f *.coffee -r \"node node_modules/coffeescript/bin/coffee ${p} > test.log\""
+  },
+  "dependencies": {
+    "cli-watch": "^1.0.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "coffeescript": "^2.5.1"
+  }
+}
