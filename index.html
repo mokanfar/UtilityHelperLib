@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-		<script src="./licia-data-manip.js"></script>
-		<script src="./javascript-prototypes.js"></script>
-		<script>
-			
-			let arr1 = ['a','b','c','d',1,2,3,4]
-			let arr2 =['c','d',3]
-			let numarray1 = [1,2,3,4,5,6,7,8,9,10,11,100,200,300]
-			let numarray2 = [5,66,22,33,44,7,88,99,10,11,2000]
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="./licia-data-manip.js"></script>
+    <script src="./javascript-prototypes.js"></script>
 
-			let obj1 = {'key1':1,'key2':2,'key3':3,'key4':'key4'}
-			let obj2 = {'key2':'something from obj2 with key2','key4':'key4'}
+    <script>
+      let arr1 = ["a", "b", "c", "d", 1, 2, 3, 4];
+      let arr2 = ["c", "d", 3];
+      let numarray1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 100, 200, 300];
+      let numarray2 = [5, 66, 22, 33, 44, 7, 88, 99, 10, 11, 2000];
 
-			let json1 = [{'key1':12345,'key2':'key2 json1 obj 1','key3':{'a':1,'b':2,'c':3}},{'key1':23456,'key2':'key2 json1 obj 2'}]
-			let json2 = [{'key1':12345,'key2':'key2 json2 obj 1'},{'key1':23456,'key2':[1,['a','b','c'],2,3,4,5,6]}]
+      let obj1 = { key1: 1, key2: 2, key3: 3, key4: "key4" };
+      let obj2 = { key2: "something from obj2 with key2", key4: "key4" };
 
-			let str1 = 'asdf1'
-			let str2 = 'asdf2'
+      let json1 = [
+        { key1: 12345, key2: "key2 json1 obj 1", key3: { a: 1, b: 2, c: 3 } },
+        { key1: 23456, key2: "key2 json1 obj 2" },
+      ];
+      let json2 = [
+        { key1: 12345, key2: "key2 json2 obj 1" },
+        { key1: 23456, key2: [1, ["a", "b", "c"], 2, 3, 4, 5, 6] },
+      ];
 
-			let a = new Zray(numarray1);
-			let b = new Zray(numarray2);
+      let str1 = "asdf1";
+      let str2 = "asdf2";
 
-		</script>
-</head>
-<body>
-	
-</body>
+      let a = new Zray(...numarray1);
+      let b = new Zray(...numarray2);
+
+      let bills = [5, 5, 5, 10, 20];
+      let o = new Zob({});
+      console.log("hi");
+    </script>
+
+    <script src="./scratchpad.js"></script>
+  </head>
+  <body></body>
 </html>
