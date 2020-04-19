@@ -20,6 +20,7 @@ interface String {
   isavalfoundinsideobj();
   isakeyof();
   existsaskeyinobj();
+  countnumberofoccurencesinarr();
   isinarray();
 }
 
@@ -41,4 +42,5 @@ interface Number {
   isakeyof();
   isinarray();
   existsaskeyinobj();
+  countnumberofoccurencesinarr();
 }

@@ -330,6 +330,17 @@ Number.prototype.removeallingreedy = function (arr) {
 Number.prototype.issetinobj = Number.prototype.isset = function (obj) {
   return _.has(obj, this.valueOf());
 };
+Number.prototype.countnumberofoccurencesinarr = function (arr) {
+  return arr
+    .map((e, i) => (e == this.toString() ? i : ""))
+    .filter((x) => x !== "").length;
+};
+String.prototype.countnumberofoccurencesinarr = function (arr) {
+  return arr
+    .map((e, i) => (e == this.valueOf() ? i : ""))
+    .filter((x) => x !== "").length;
+};
+
 Number.prototype.alllocationsin = Number.prototype.alloccurrenceindexesin = Number.prototype.allindexesinside = Number.prototype.allindexesin = function (
   arr
 ) {
@@ -373,7 +384,9 @@ String.prototype.locationof = String.prototype.indexin = function (v) {
 String.prototype.alllocationsin = String.prototype.alloccurrenceindexesin = String.prototype.allindexesinside = String.prototype.allindexesin = function (
   arr
 ) {
-  return arr.map((e, i) => (e === value ? i : "")).filter(this.valueOf());
+  return arr
+    .map((e, i) => (e === this.valueOf() ? i : ""))
+    .filter((x) => x !== "");
 };
 
 String.prototype.num = function () {
