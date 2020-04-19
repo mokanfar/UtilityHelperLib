@@ -79,7 +79,7 @@ Zray.prototype.remove = function (val) {
   return this;
 };
 
-Zray.prototype.removeall = Zray.prototype.greedyremoveall = Zray.prototype.removeallwherevalueis = Zray.prototype.removeevery = function (
+Zray.prototype.removeallwherevalis = Zray.prototype.removeall = Zray.prototype.greedyremoveall = Zray.prototype.removeallwherevalueis = Zray.prototype.removeevery = function (
   val
 ) {
   let idx = this.indexOf(val);
@@ -345,7 +345,9 @@ String.prototype.isakeyof = String.prototype.isakeyinsideobj = function (obj) {
   return _.keys(obj).includes(this.valueOf());
 };
 
-Number.prototype.isakeyof = Number.prototype.isakeyinsideobj = function (obj) {
+Number.prototype.existsinobj = Number.prototype.isakeyof = Number.prototype.isakeyinsideobj = function (
+  obj
+) {
   return _.keys(obj).includes(this.toString());
 };
 

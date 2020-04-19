@@ -19,6 +19,7 @@ interface String {
   rep();
   isavalfoundinsideobj();
   isakeyof();
+  existsaskeyinobj();
   isinarray();
 }
 
@@ -39,4 +40,5 @@ interface Number {
   isavalfoundinsideobj();
   isakeyof();
   isinarray();
+  existsaskeyinobj();
 }
