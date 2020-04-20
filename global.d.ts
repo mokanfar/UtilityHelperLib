@@ -5,42 +5,46 @@ declare global {
 
 interface String {
   has();
-  isin();
   num();
-  isin();
-  isset();
-  locationof();
-  indexin();
-  alllocationsin();
-  alloccurrenceindexesin();
-  allindexesinside();
-  allindexesin();
-  numberofoccurrencesin();
   rep();
-  isavalfoundinsideobj();
+  isin();
+  indexin();
   isakeyof();
-  existsaskeyinobj();
-  countnumberofoccurencesinarr();
   isinarray();
+  issetinobj();
+  insertinto();
+  allindexesin();
+  isinavalueobj();
+  alllocationsin();
+  isakeyinsideobj();
+  allindexesinside();
+  numberofoccurencesin();
+  insertintoarrayatindex();
+  findinarrayreturnindex();
+  countnumberofoccurencesinarr();
+  findalloccurrencereturnindexarrayin();
 }
 
 interface Number {
-  has();
-  isin();
   abs();
   str();
-  removeallingreedy();
-  issetinobj();
+  isin();
   isset();
-  alllocationsin();
-  alloccurrenceindexesin();
-  allindexesinside();
-  allindexesin();
-  numberofoccurencesin();
   indexin();
-  isavalfoundinsideobj();
   isakeyof();
   isinarray();
-  existsaskeyinobj();
+  issetinobj();
+  insertinto();
+  existsinobj();
+  allindexesin();
+  alllocationsin();
+  isakeyinsideobj();
+  allindexesinside();
+  removeallingreedy();
+  numberofoccurencesin();
+  insertintoarrayatindex();
+  alloccurrenceindexesin();
+  isinavaluefoundinsideobj();
   countnumberofoccurencesinarr();
+  findalloccurencesinarrayandreturnarrayindices();
 }

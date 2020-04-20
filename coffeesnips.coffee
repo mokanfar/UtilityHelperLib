@@ -1,4 +1,14 @@
-### all_properties = (obj) ->
+###
+all_properties = (obj) => {
+  return Object.getOwnPropertyNames(obj.prototype);
+};
+
+console.log(all_properties(Number));
+console.log(all_properties(String));
+console.log(all_properties(Zob));
+console.log(all_properties(Zray));
+
+all_properties = (obj) ->
   return Object.getOwnPropertyNames(obj.prototype)
   c all_properties(Zray)
   c all_properties(Zob)
