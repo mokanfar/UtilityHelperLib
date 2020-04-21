@@ -1,0 +1,25 @@
+let arr1 = ["a", "b", "c", "d", 1, 2, 3, 4];
+let arr2 = ["c", "d", 3];
+let numarray1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 100, 200, 300];
+let numarray2 = [5, 66, 22, 33, 44, 7, 88, 99, 10, 11, 2000];
+
+let obj1 = { a: 1, b: 2, c: 3, d: 4 };
+let obj2 = { a: 2, e:3, f:4, g:5, h:6, i:7 };
+
+
+let json1 = [
+  { id: 12345, key2: "key2 json1 obj 1", key3: { a: 1, b: 2, c: 3 } },
+  { id: 23456, key2: "key2 json1 obj 2" b:2,c:3,d:4,e:5},
+];
+
+let json2 = [
+  { key1: 12345, key2: "key2 json2 obj 1" },
+  { key1: 23456, key2: [1, ["a", "b", "c"], 2, 3, 4, 5, 6] },
+];
+
+let str1 = "asdf1";
+let str2 = "asdf2";
+
+let a = new Zray(...numarray1);
+let b = new Zray(...numarray2);
+let o = new Zob({});

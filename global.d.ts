@@ -1,12 +1,15 @@
 declare global {
-  class Zray<T> extends Array<T> {}
+  class Zray<T> extends Array<T> {
+  prototype.insertvalueofintoindex(val:number,idx:any);
+
+  }
   class Zob<T> extends Object<T> {}
 }
 
 interface String {
   has();
   num();
-  rep();
+  rep(what:string, with: any);
   isin();
   indexin();
   isakeyof();
@@ -19,7 +22,7 @@ interface String {
   isakeyinsideobj();
   allindexesinside();
   numberofoccurencesin();
-  insertintoarrayatindex();
+  insertintoarrayatindex(idx: number, arr: any);
   findinarrayreturnindex();
   countnumberofoccurencesinarr();
   findalloccurrencereturnindexarrayin();
@@ -42,7 +45,7 @@ interface Number {
   allindexesinside();
   removeallingreedy();
   numberofoccurencesin();
-  insertintoarrayatindex();
+  insertintoarrayatindex(idx: number, arr: any);
   alloccurrenceindexesin();
   isinavaluefoundinsideobj();
   countnumberofoccurencesinarr();
