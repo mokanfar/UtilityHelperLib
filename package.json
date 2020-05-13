@@ -1,16 +1,20 @@
 {
   "name": "UtilityHelperLib",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "scripts": {
     "start": "watch -f *.js -r \"node ${p} > test.log\"",
     "coffee": "watch -f *.coffee -r \"node node_modules/coffeescript/bin/coffee ${p} > test.log\""
   },
   "dependencies": {
+    "csvtojson": "^2.0.10",
+    "json2csv": "^4.3.3",
+    "fs-extra": "^9.0.0",
     "cli-watch": "^1.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
-    "coffeescript": "^2.5.1"
+    "coffeescript": "^2.5.1",
+    "typescript": "^3.8.3"
   }
 }
